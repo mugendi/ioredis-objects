@@ -1,6 +1,6 @@
 {
   "name": "ioredis-objects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module that extends the ioredis class in order to allow you to work with objects easily.",
   "main": "index.js",
   "scripts": {
