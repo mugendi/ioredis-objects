@@ -6,7 +6,14 @@
   "scripts": {
     "test": "node --test"
   },
-  "keywords": ["redis", "ioredis", "json","objects","files", "buffer"],
+  "keywords": [
+    "redis",
+    "ioredis",
+    "json",
+    "objects",
+    "files",
+    "buffer"
+  ],
   "author": "Anthony Mugendi",
   "license": "MIT",
   "dependencies": {
@@ -15,5 +22,12 @@
   "devDependencies": {
     "mocha": "^10.3.0"
   },
-  "repository": "https://github.com/mugendi/ioredis-objects.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mugendi/ioredis-objects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mugendi/ioredis-objects/issues"
+  },
+  "homepage": "https://github.com/mugendi/ioredis-objects#readme"
 }
