@@ -28,7 +28,11 @@ class Redis extends RedisClass {
     try {
       key = this.getKey(key);
       // console.log(key);
-      let { type, data } = await this.get(key).then(JSON.parse);
+      let { type, data } = await this.get(key)
+        .then(JSON.parse)
+        .then((resp) => {
+          return resp || {};
+        });
 
       // format based on type
       if (type == 'buffer') {
@@ -41,7 +45,7 @@ class Redis extends RedisClass {
     }
   }
 
-  async setObj(key, data, {  expires = null } = {}) {
+  async setObj(key, data, { expires = null } = {}) {
     try {
       key = this.getKey(key);
 
@@ -58,7 +62,7 @@ class Redis extends RedisClass {
     }
   }
 
-  getKey(key, ) {
+  getKey(key) {
     let keyArr = arrify(key);
     keyArr = keyArr.filter((v) => v && String(v).length > 0);
     return keyArr.join(':');
