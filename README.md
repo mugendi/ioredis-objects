@@ -7,7 +7,7 @@
 
 # ioredis-objects
 
-This module extends the [ioredis](https://www.npmjs.com/package/ioredis) class in order to allow you to work with objects easily. This means you can cache objects and files in redis without worrying about how the data is encoded and decoded. 
+This module extends the [ioredis](https://www.npmjs.com/package/ioredis) class in order to allow you to work with objects easily. This means you can cache objects and files in redis without worrying about how the data is encoded and decoded.
 
 This is achieved by:
 
@@ -47,7 +47,19 @@ const assert = require('assert');
 
 ### `async setObj(key:String|Number|Array, data:Any, options:{expires:Number})`
 
-### `async getObj(key:String|Array)`
+### `async getObj(key:String|Number|Arrayy)`
+
+### `getKey(key:String|Number|Array)`
+
+This method is exposed so you can construct the name-spaced keys for purposes of action like key deletion.
+
+Example:
+
+```javascript
+const redisKey = ['prefix', 'test-key', 1];
+const nsKey = redis.getKey(redisKey);
+await redis.del(nsKey);
+```
 
 #### Note:
 
